@@ -48,7 +48,7 @@ AFRAME.registerComponent("terrain-rotation-reader", {
   
         //controlar los atributos con las flechas del teclado
         if (e.key === "ArrowRight") {
-          if (sladeRotation.x > -10) {
+          if (sledRotation.x > -10) {
             sledRotation.x -= 0.5;
             this.el.setAttribute("rotation", sledRotation);
           }
