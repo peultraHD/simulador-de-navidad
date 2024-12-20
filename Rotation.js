@@ -31,7 +31,7 @@ AFRAME.registerComponent("terrain-rotation-reader", {
   });
   
   //Componente de rotación del avión
-  AFRAME.registerComponent("plane-rotation-reader", {
+  AFRAME.registerComponent("sled-rotation-reader", {
     schema: {
       speedOfRotation: { type: "number", default: 0 },
       speedOfAscent: { type: "number", default: 0 }
@@ -43,40 +43,40 @@ AFRAME.registerComponent("terrain-rotation-reader", {
         this.data.speedOfRotation = this.el.getAttribute("rotation");      
         this.data.speedOfAscent = this.el.getAttribute("position");
   
-        var planeRotation = this.data.speedOfRotation;      
-        var planePosition = this.data.speedOfAscent;
+        var sledRotation = this.data.speedOfRotation;      
+        var sledPosition = this.data.speedOfAscent;
   
         //controlar los atributos con las flechas del teclado
         if (e.key === "ArrowRight") {
-          if (planeRotation.x > -10) {
-            planeRotation.x -= 0.5;
-            this.el.setAttribute("rotation", planeRotation);
+          if (sladeRotation.x > -10) {
+            sledRotation.x -= 0.5;
+            this.el.setAttribute("rotation", sledRotation);
           }
         }
         if (e.key === "ArrowLeft") {
-          if (planeRotation.x < 10) {
-            planeRotation.x += 0.5;
-            this.el.setAttribute("rotation", planeRotation);
+          if (sledRotation.x < 10) {
+            sledRotation.x += 0.5;
+            this.el.setAttribute("rotation", sledRotation);
           }
         }
         if (e.key === "ArrowUp") {
-          if (planeRotation.z > -10) {
-            planeRotation.z -= 0.5;
-            this.el.setAttribute("rotation", planeRotation);
+          if (sledRotation.z > -10) {
+            sledRotation.z -= 0.5;
+            this.el.setAttribute("rotation", sledRotation);
           }
-          if (planePosition.y < 2) {
-            planePosition.y += 0.01;
-            this.el.setAttribute("position", planePosition);
+          if (sledPosition.y < 2) {
+            sledPosition.y += 0.01;
+            this.el.setAttribute("position", sledPosition);
           }
         }
         if (e.key === "ArrowDown") {
-          if (planeRotation.z < 20) {
-            planeRotation.z += 0.5;
-            this.el.setAttribute("rotation", planeRotation);
+          if (sledRotation.z < 20) {
+            sledRotation.z += 0.5;
+            this.el.setAttribute("rotation", sledRotation);
           }
-          if (planePosition.y > -15) {
-            planePosition.y -= 0.01;
-            this.el.setAttribute("position", planePosition);
+          if (sledPosition.y > -15) {
+            sledPosition.y -= 0.01;
+            this.el.setAttribute("position", sledPosition);
           }
         }
       });
